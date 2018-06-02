@@ -25,6 +25,20 @@ public class TestandoListas {
         aulas.add(aula2);
         aulas.add(aula3);
         
-        System.out.println("Listas ");
+        System.out.println("Listas "+ aulas);
+        aulas.remove(0);
+        System.out.println("Listas "+ aulas);
+        
+        
+        for (String aula: aulas){
+            System.out.println("Aula: "+aula);
+        } 
+        
+        
+        
+        String primeiraAula = aulas.get(0);
+        System.out.println("A primeira Aula é: "+primeiraAula);
+        
+        
     }
 }
