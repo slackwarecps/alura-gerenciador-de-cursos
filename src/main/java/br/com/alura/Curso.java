@@ -11,56 +11,40 @@ import java.util.List;
 
 /**
  * Diferenca entre List e Array list?
- * 
- * 
+ *
+ *
  * ArrayList Descende de List
- * 
+ *
  * @author fabioalvaro
  */
 public class Curso {
+
     private String nome;
     private String instrutor;
     private List<Aula> aulas = new LinkedList<Aula>();
 
-    public String getNome() {
-        return nome;
+    public Curso(String nome, String instrutor) {
+        this.nome = nome;
+        this.instrutor = instrutor;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getNome() {
+        return nome;
     }
 
     public String getInstrutor() {
         return instrutor;
     }
 
-    public void setInstrutor(String instrutor) {
-        this.instrutor = instrutor;
-    }
-
     public List<Aula> getAulas() {
-        //readonly
         return Collections.unmodifiableList(aulas);
     }
 
-    public void setAulas(List<Aula> aulas) {
-        this.aulas = aulas;
+    public void adiciona(Aula aula) {
+        this.aulas.add(aula);
     }
-    
-    
-    
-    public Curso(String nome,String instrutor){
-        super();
-        this.nome=nome;
-        this.instrutor=instrutor;
-    
+
+    public int getTempoTotal() {
+        return this.aulas.stream().mapToInt(Aula::getTempo).sum();
     }
-    /**
-     * Adiciona uma aula
-     * @param aula 
-     */
-   public void adiciona(Aula aula){
-       this.aulas.add(aula);
-   }
-    
 }
