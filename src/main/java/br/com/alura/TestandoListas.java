@@ -40,5 +40,18 @@ public class TestandoListas {
         System.out.println("A primeira Aula é: "+primeiraAula);
         
         
+        for (int i=0;i<aulas.size();++i) {
+            System.out.println("aula :"+aulas.get(i));            
+        }
+        System.out.println(aulas.size());
+        
+        
+        //java 8
+        aulas.forEach(aula->{
+            System.out.println("percorrendo :");
+            System.out.println("Aula "+aula);
+        });
+        
+        
     }
 }
